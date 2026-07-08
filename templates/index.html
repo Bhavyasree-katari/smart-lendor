@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Lender</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>🏦 Smart Lender</h1>
+    <p>AI-Powered Loan Approval Prediction System using Machine Learning</p>
+
+    <div class="info-box">
+
+        <div class="card">
+            <h3>🤖 Model</h3>
+            <p>Random Forest</p>
+        </div>
+
+        <div class="card">
+            <h3>📊 Accuracy</h3>
+            <p>80%</p>
+        </div>
+
+        <div class="card">
+            <h3>⚡ Prediction</h3>
+            <p>Instant</p>
+        </div>
+
+    </div>
+
+    <hr>
+
+    <h3>Applicant Information</h3>
+
+    <form action="/predict" method="POST">
+
+        <div class="row">
+
+            <div class="input-box">
+                <label>Gender</label>
+                <select name="Gender" required>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+
+            <div class="input-box">
+                <label>Married</label>
+                <select name="Married" required>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="input-box">
+                <label>Dependents</label>
+                <select name="Dependents" required>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3+">3+</option>
+                </select>
+            </div>
+
+            <div class="input-box">
+                <label>Education</label>
+                <select name="Education" required>
+                    <option value="Graduate">Graduate</option>
+                    <option value="Not Graduate">Not Graduate</option>
+                </select>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="input-box">
+                <label>Self Employed</label>
+                <select name="Self_Employed" required>
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                </select>
+            </div>
+
+            <div class="input-box">
+                <label>Property Area</label>
+                <select name="Property_Area" required>
+                    <option value="Urban">Urban</option>
+                    <option value="Semiurban">Semiurban</option>
+                    <option value="Rural">Rural</option>
+                </select>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="input-box">
+                <label>Applicant Income</label>
+                <input
+                    type="number"
+                    name="ApplicantIncome"
+                    placeholder="Enter Applicant Income"
+                    required>
+            </div>
+
+            <div class="input-box">
+                <label>Co-applicant Income</label>
+                <input
+                    type="number"
+                    name="CoapplicantIncome"
+                    placeholder="Enter Co-applicant Income"
+                    required>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="input-box">
+                <label>Loan Amount</label>
+                <input
+                    type="number"
+                    name="LoanAmount"
+                    placeholder="Enter Loan Amount"
+                    required>
+            </div>
+
+            <div class="input-box">
+                <label>Loan Amount Term</label>
+                <input
+                    type="number"
+                    name="Loan_Amount_Term"
+                    value="360"
+                    required>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="input-box">
+                <label>Credit History</label>
+                <select name="Credit_History" required>
+                    <option value="1">Good (1)</option>
+                    <option value="0">Bad (0)</option>
+                </select>
+            </div>
+
+            <div class="input-box">
+                <label>Loan Purpose</label>
+                <select>
+                    <option>Home Loan</option>
+                    <option>Business Loan</option>
+                    <option>Education Loan</option>
+                    <option>Personal Loan</option>
+                </select>
+            </div>
+
+        </div>
+
+        <button type="submit">
+            🔍 Predict Loan Status
+        </button>
+
+    </form>
+
+    <footer>
+        <hr>
+        <p>
+            © 2026 Smart Lender | AI-Based Loan Approval Prediction System
+        </p>
+    </footer>
+
+</div>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

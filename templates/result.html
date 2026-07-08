@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result | Smart Lender</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container result-box">
+
+    <h1>🏦 Smart Lender</h1>
+    <p>AI-Based Loan Approval Prediction System</p>
+
+    <hr>
+
+    <h2>Prediction Result</h2>
+
+    <div class="prediction">
+        {{ prediction }}
+    </div>
+
+    {% if "Approved" in prediction %}
+    <p style="color:green;font-size:18px;">
+        Congratulations! Based on the applicant details, the loan is likely to be approved.
+    </p>
+    {% else %}
+    <p style="color:red;font-size:18px;">
+        The applicant may not meet the eligibility criteria for loan approval.
+    </p>
+    {% endif %}
+
+    <br>
+
+    <a href="/">
+        <button>🔄 Predict Another Loan</button>
+    </a>
+
+    <footer>
+        <hr>
+        <p>© 2026 Smart Lender | Developed using Flask & Machine Learning</p>
+    </footer>
+
+</div>
+
+</body>
+</html>
